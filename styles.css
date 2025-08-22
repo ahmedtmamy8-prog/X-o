@@ -1,0 +1,119 @@
+/* Reset and base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, #0e1217 0%, #111827 100%);
+  color: #e5e7eb;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: min(92vw, 520px);
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.controls label { opacity: 0.85; }
+
+select, button {
+  appearance: none;
+  border: 1px solid #374151;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+button { cursor: pointer; }
+button:hover { border-color: #4b5563; }
+button.secondary { background: #0b1220; }
+
+.status {
+  text-align: center;
+  margin: 10px 0 14px;
+  padding: 8px 12px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #0b1220;
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid #1f2937;
+}
+
+.cell {
+  display: grid;
+  place-items: center;
+  background: #0f172a;
+  border: 1px solid #243047;
+  border-radius: 12px;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  color: #cbd5e1;
+  user-select: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.cell:empty:hover { transform: scale(1.02); border-color: #3b82f6; }
+.cell[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+.cell.x { color: #60a5fa; }
+.cell.o { color: #f472b6; }
+
+.cell.win {
+  background: #052e3b;
+  border-color: #06b6d4;
+  box-shadow: inset 0 0 0 1px #06b6d4;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.score {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.score span { display: block; opacity: 0.8; margin-bottom: 4px; }
+.score strong { font-size: 20px; }
+
+@media (min-width: 540px) {
+  h1 { font-size: 32px; }
+  .cell { font-size: 56px; }
+}

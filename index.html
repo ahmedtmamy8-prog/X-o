@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة XO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>لعبة XO</h1>
+
+    <div class="controls">
+      <label for="mode">الوضع:</label>
+      <select id="mode" aria-label="اختيار وضع اللعب">
+        <option value="human">ضد نفسي</option>
+        <option value="ai">ضد الكمبيوتر</option>
+      </select>
+      <button id="newGameBtn" type="button">لعبة جديدة</button>
+      <button id="resetScoresBtn" type="button" class="secondary">تصفير النتائج</button>
+    </div>
+
+    <div id="status" class="status" aria-live="polite">دور اللاعب: X</div>
+
+    <div id="board" class="board" role="grid" aria-label="لوحة XO"></div>
+
+    <div class="scoreboard" aria-label="نتائج المباريات">
+      <div class="score">
+        <span>X</span>
+        <strong id="scoreX">0</strong>
+      </div>
+      <div class="score">
+        <span>O</span>
+        <strong id="scoreO">0</strong>
+      </div>
+      <div class="score">
+        <span>تعادل</span>
+        <strong id="scoreDraw">0</strong>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
